@@ -1,0 +1,93 @@
+snippet config "dbt config block" b
+\{\{
+    config(
+        materialized = "$1",
+        sort = "$2",
+        dist = "$3"
+	)
+\}\}
+endsnippet
+
+snippet dbt_block "dbt block" b
+\{% $0 %\}
+endsnippet
+
+snippet config_incremental "dbt config incremental" b
+\{\{
+    config(
+        materialized='incremental',
+        sql_where='true',
+        unique_key='${1:id}'
+    )
+\}\}
+endsnippet
+
+snippet docs "dbt docs block" b
+\{% docs ${1:name} %\}
+    $2
+\{% enddocs %\}
+endsnippet
+
+snippet env_var "dbt env_var"
+\{\{ env_var('${1:env_var_name}') \}\}
+endsnippet
+
+snippet filter "dbt filter" b
+\{% filter ${1:filter} %\}
+    $2
+\{% endfilter %\}
+endsnippet
+
+snippet for "dbt for" b
+\{% for ${1:item} in ${2:sequence} %\}
+    $3
+\{% endfor %\}
+endsnippet
+
+snippet if "dbt if" b
+\{% if ${1:expr} %\}
+    $2
+\{% endif %\}
+endsnippet
+
+snippet load "dbt load" b
+load_result('${1:statement_name}')
+endsnippet
+
+snippet log "dbt log" b
+\{\{ log(${1:var}, info=${2:True}) \}\}
+endsnippet
+
+snippet macro "dbt macro"
+\{% macro ${1:name}(${2:args}) %\}
+    $3
+\{% endmacro %\}
+endsnippet
+
+snippet return "dbt return" b
+\{\{ return($\{1\}) \}\}
+endsnippet
+
+snippet set "dbt set" b
+\{% set ${1:var}=${2:value} %\}
+endsnippet
+
+snippet set_block "dbt set_block" b
+\{% set ${1:name} %\}
+    $2
+\{% endset %\}
+endsnippet
+
+snippet statement "dbt statement" b
+\{% call statement(${2:name}, fetch_result=${2:True}) %\}
+    $\{3:select 1\}
+\{% endcall %\}
+endsnippet
+
+snippet reference "dbt ref"
+\{\{ ref('${1:model_name}') \}\}
+endsnippet
+
+snippet var "dbt var"
+\{\{ var('${1:var_name}') \}\}
+endsnippet
