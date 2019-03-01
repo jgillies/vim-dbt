@@ -3,6 +3,7 @@ au BufNewFile,BufRead *.sql set ft=dbt suffixesadd+=.sql
 au BufNewFile,BufRead *.md set suffixesadd+=.sql
 au BufNewFile,BufRead *.yml set suffixesadd+=.sql
 
+" make sure you update the paths with the location of dbt in your environment!
 " update path to look for files in dbt directories
 au BufNewFile,BufRead *.sql set path+=[put path to where dbt lives here]/dbt/macros/**
 au BufNewFile,BufRead *.sql set path+=[put path to where dbt lives here]/dbt/models/**
