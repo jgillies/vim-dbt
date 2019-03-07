@@ -90,7 +90,7 @@ endsnippet
 
 snippet cte "dbt cte"
 ${1:cte_name} as (
-    \{\{ ref('${2:model_name}') \}\}
+    select * from \{\{ ref('${2:model_name}') \}\}
 )
 endsnippet
 
