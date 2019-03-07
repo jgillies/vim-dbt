@@ -88,6 +88,12 @@ snippet reference "dbt ref"
 \{\{ ref('${1:model_name}') \}\}
 endsnippet
 
+snippet cte "dbt cte"
+${1:cte_name} as (
+    \{\{ ref('${2:model_name}') \}\}
+)
+endsnippet
+
 snippet var "dbt var"
 \{\{ var('${1:var_name}') \}\}
 endsnippet
