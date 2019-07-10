@@ -36,3 +36,5 @@ command! -complete=shellcmd -nargs=+ Shell call s:ExecuteInShell(<q-args>)
 
 nnoremap <leader>got :execute 'Shell dbt-helper open <c-r><c-w> --print'<CR>
 nnoremap <leader>gof :execute 'Shell dbt-helper open '.substitute(expand('%:t'),'\..*$','',"g").' --print'<CR>
+
+source $HOME/.vim/config/dbtrpc.vimrc
