@@ -4,6 +4,7 @@ import json
 import base64
 
 import requests
+import uuid
 
 import vim
 
@@ -17,11 +18,11 @@ def submitRpc():
     payload = {
             "jsonrpc": "2.0",
             "method": "compile",
-            "id": "1",
+            "id": uuid.uuid1().int,
             "params": {
                 "timeout": 60,
                 "sql": encoded_sql,
-                "name": "test_query"
+                "name": vim.current.buffer.name
                 }
             }
 
