@@ -15,6 +15,8 @@ def submitRpc():
     cb = '\n'.join(vim.current.buffer)
     sql = cb.encode('ascii')
     encoded_sql = base64.b64encode(sql).decode('utf-8')
+    filepath = vim.current.buffer.name
+    filename = os.path.splitext(os.path.basename(filepath))[0]
     payload = {
             "jsonrpc": "2.0",
             "method": "compile",
@@ -22,7 +24,7 @@ def submitRpc():
             "params": {
                 "timeout": 60,
                 "sql": encoded_sql,
-                "name": vim.current.buffer.name
+                "name": filename
                 }
             }
 
